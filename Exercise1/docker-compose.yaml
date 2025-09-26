@@ -32,9 +32,7 @@ services:
     image: storage:0.1
     container_name: storage
     volumes:
-      - type: bind
-        source: /home/cabba/TAU/DevOps/Exercise1/vstorage
-        target: /vstorage
+      - ./internal-storage:/internal-storage
     networks:
       - internal
 

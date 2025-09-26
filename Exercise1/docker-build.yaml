@@ -19,5 +19,3 @@ services:
     build: ./storage
     image: storage:0.1
     container_name: storage
-    volumes:
-      - ./vstorage:/vstorage

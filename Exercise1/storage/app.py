@@ -2,18 +2,23 @@ from flask import Flask, request, Response
 import os
 
 app = Flask(__name__)
-log_file = "/vstorage"
+internal_file = "/internal-storage/log.txt"
+
+os.makedirs("/storage", exist_ok=True)
+if not os.path.exists(internal_file):
+    open(internal_file, "a").close()
 
 @app.route("/log", methods=["POST"])
 def append_log():
     data = request.get_data(as_text=True)
-    with open(log_file, "a") as f:
-        f.write(data + "\n")
+    # write to internal storage
+    with open(internal_file, "a") as f:
+        f.write(data.rstrip("\n") + "\n")
     return "OK", 200
 
 @app.route("/log", methods=["GET"])
 def get_log():
-    with open(log_file, "r") as f:
+    with open(internal_file, "r") as f:
         content = f.read()
     return Response(content, mimetype="text/plain")
 
