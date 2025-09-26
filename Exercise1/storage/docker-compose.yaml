@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  storage:
+    image: storage:0.2
+    container_name: storage
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./vstorage:/vstorage

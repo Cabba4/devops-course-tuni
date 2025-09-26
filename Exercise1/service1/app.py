@@ -10,12 +10,7 @@ app = Flask(__name__)
 # Config
 storage_url = "http://storage:8200/log"
 service2_url = "http://service2:8201/status"
-vstorage_file = "/vstorage/log.txt"
-
-# Ensure vStorage exists
-os.makedirs("/vstorage", exist_ok=True)
-if not os.path.exists(vstorage_file):
-    open(vstorage_file, "a").close()
+vstorage_file = "/vstorage"
 
 def get_uptime():
     try:

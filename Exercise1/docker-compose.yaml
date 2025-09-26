@@ -7,7 +7,9 @@ services:
     ports:
       - "8199:8199"
     volumes:
-      - ./vstorage:/vstorage
+      - type: bind
+        source: /home/cabba/TAU/DevOps/Exercise1/vstorage
+        target: /vstorage
     depends_on:
       - service2
       - storage
@@ -18,7 +20,9 @@ services:
     image: service2:0.1
     container_name: service2
     volumes:
-      - ./vstorage:/vstorage
+      - type: bind
+        source: /home/cabba/TAU/DevOps/Exercise1/vstorage
+        target: /vstorage
     depends_on:
       - storage
     networks:
@@ -28,7 +32,9 @@ services:
     image: storage:0.1
     container_name: storage
     volumes:
-      - ./vstorage:/vstorage
+      - type: bind
+        source: /home/cabba/TAU/DevOps/Exercise1/vstorage
+        target: /vstorage
     networks:
       - internal
 

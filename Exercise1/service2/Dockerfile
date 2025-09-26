@@ -10,7 +10,7 @@ COPY main.go .
 RUN go build -o service2 main.go
 
 # Create vstorage directory
-RUN mkdir /vstorage
+RUN touch /vstorage
 
 # Expose port
 EXPOSE 8201

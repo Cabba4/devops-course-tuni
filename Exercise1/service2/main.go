@@ -11,7 +11,7 @@ import (
 
 const (
     storageURL = "http://storage:8200/log" // URL of Storage container
-    vStorage   = "/vstorage/log.txt"  // mounted volume file
+    vStorage   = "/vstorage"  // mounted volume file
 )
 
 func getUptime() string {
