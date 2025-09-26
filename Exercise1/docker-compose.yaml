@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  service1:
+    image: service1:0.1
+    container_name: service1
+    ports:
+      - "8199:8199"
+    volumes:
+      - ./vstorage:/vstorage
+    depends_on:
+      - service2
+      - storage
+    networks:
+      - internal
+
+  service2:
+    image: service2:0.1
+    container_name: service2
+    volumes:
+      - ./vstorage:/vstorage
+    depends_on:
+      - storage
+    networks:
+      - internal
+
+  storage:
+    image: storage:0.1
+    container_name: storage
+    volumes:
+      - ./vstorage:/vstorage
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

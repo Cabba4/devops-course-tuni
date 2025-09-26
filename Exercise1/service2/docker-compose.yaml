@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  service2:
+    image: service2:0.2
+    container_name: service2
+    ports:
+      - "8201:8201"
+    volumes:
+      - ./vstorage:/vstorage
