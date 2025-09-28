@@ -6,7 +6,7 @@ COPY app.py requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Create vstorage directory
+# Create vstorage file
 RUN touch /vstorage
 
 EXPOSE 8199

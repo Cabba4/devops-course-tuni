@@ -1,0 +1,10 @@
+:~/Exercise1(exercise1)$ podman container ls
+CONTAINER ID  IMAGE                   COMMAND        CREATED         STATUS         PORTS                   NAMES
+248aec9924f7  localhost/storage:0.1   python app.py  28 minutes ago  Up 28 minutes  8200/tcp                storage
+cdcf69d9e694  localhost/service2:0.1  ./service2     28 minutes ago  Up 28 minutes  8201/tcp                service2
+c7573a7ad902  localhost/service1:0.1  python app.py  28 minutes ago  Up 28 minutes  0.0.0.0:8199->8199/tcp  service1
+:~/Exercise1(exercise1)$ podman network ls
+NETWORK ID    NAME                DRIVER
+15c17448fa3c  docker_default      bridge
+0b2e6f50024f  exercise1_internal  bridge
+2f259bab93aa  podman              bridge

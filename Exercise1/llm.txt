@@ -1,0 +1,9 @@
+ChatGPT-5 with basic free plan has been used for this exercise
+
+Main motivation for using it was as a guide to go through the instructions pdf, help out with developing code for the containers to run and debug issues while testing code.
+
+The LLM helped in many ways by fixing syntax issues, small queries and even git errors. 
+
+LLM did have small errors, it tried to use deprecated libraries in the code, often rewrote the whole code block and disregarded previous context.
+
+LLM would not have been able to create the whole exercise by just providing the pdf, overall it works good as a helper but context and human intervention is still needed.
