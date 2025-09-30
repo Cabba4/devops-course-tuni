@@ -2,5 +2,5 @@
 
 ## Cleanup vstoarage and internal-storage
 
-[ -f vstorage ] && echo "" > vstorage
-[ -f internal-storage/log.txt ] && echo "" > internal-storage/log.txt
+[ -f vstorage ] && false > vstorage
+[ -f internal-storage/log.txt ] && false > internal-storage/log.txt
